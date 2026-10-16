@@ -1,0 +1,22 @@
+{
+  "name": "rocky",
+  "displayName": "Rocky",
+  "version": "0.1.0",
+  "description": "Bring your personal world model into Claude: one living picture of your life and work, the people you know, what you work on, your commitments and preferences, built privately by Rocky from your own messages, mail, calendar and screen. Rocky guards it and asks you before anything is shared or sent.",
+  "author": {
+    "name": "Doppelganger Technologies",
+    "email": "support@getrocky.world",
+    "url": "https://getrocky.world"
+  },
+  "homepage": "https://getrocky.world",
+  "repository": "https://github.com/getrocky-world/rocky-plugin",
+  "license": "MIT",
+  "keywords": [
+    "world model",
+    "memory",
+    "personal",
+    "people",
+    "meetings",
+    "productivity"
+  ]
+}

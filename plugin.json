@@ -1,0 +1,115 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "rocky",
+  "version": "0.1.0",
+  "description": "Bring your personal world model to your agent: one living picture of your life and work, the people you know, what you work on, your commitments and preferences, built privately by Rocky. Rocky guards it and asks you before anything is shared or sent.",
+  "author": {
+    "name": "Doppelganger Technologies",
+    "email": "support@getrocky.world",
+    "url": "https://getrocky.world"
+  },
+  "homepage": "https://getrocky.world",
+  "repository": "https://github.com/getrocky-world/rocky-plugin",
+  "license": "MIT",
+  "keywords": [
+    "world model",
+    "memory",
+    "personal",
+    "people",
+    "meetings",
+    "productivity"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Rocky",
+        "shortDescription": "Your world model in ChatGPT",
+        "longDescription": "Rocky brings your personal world model into ChatGPT, so it answers like someone who knows your life and work.\n\nYour world model is one living picture of your life and work: the people you know, what you work on, your meetings, commitments, preferences and rules for agents. Rocky creates it privately on your Mac from the sources you switch on (your messages, mail, calendar and screen), keeps it current and guards it. With Rocky connected, ChatGPT works from that picture: who someone is and when you last talked, what you promised and to whom, what is coming up today, where you left off on a project, and how you like things written.\n\nYou stay in charge. ChatGPT asks Rocky first, and nothing leaves without your yes unless a rule you set allows it. Health, money and passwords are never shared by default. Emails, WhatsApp messages and calendar invites that ChatGPT drafts are sent only after you approve them in Rocky. Every access is logged, and you can revoke any agent any time.\n\nProcessed by leading AI models. Never used to train AI. Never sold. Requires a Rocky account and the Rocky app for Mac.",
+        "developerName": "Doppelganger Technologies",
+        "category": "Productivity",
+        "capabilities": [
+          "Read your personal world model",
+          "Ask you a question",
+          "Send email after your approval",
+          "Send WhatsApp after your approval",
+          "Create calendar events after your approval"
+        ],
+        "websiteURL": "https://getrocky.world",
+        "supportURL": "https://getrocky.world/agents",
+        "privacyPolicyURL": "https://getrocky.world/privacy",
+        "termsOfServiceURL": "https://getrocky.world/terms",
+        "defaultPrompt": [
+          "Brief me for my next meeting from my world model.",
+          "What did I promise people this week?",
+          "Where did I leave off yesterday?"
+        ],
+        "brandColor": "#B07D2A",
+        "composerIcon": "./assets/icon-512.png",
+        "logo": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Person lookup from the user's world model",
+              "prompt": "Who is Jonas Weber and when did I last talk to him?",
+              "tools_triggered": "get_person",
+              "expected_behavior": "Says Jonas is a partner at a seed fund and the likely lead of Lena's round, with the last contact per channel and what is open between them."
+            },
+            {
+              "description": "Commitments across messages and meetings",
+              "prompt": "What did I promise people this week, and what do others owe me?",
+              "tools_triggered": "get_promises",
+              "expected_behavior": "Lists open promises in both directions with the person, the due date where known and where it was said."
+            },
+            {
+              "description": "Meeting preparation",
+              "prompt": "Brief me for my next call with Jonas.",
+              "tools_triggered": "upcoming_meetings, get_person",
+              "expected_behavior": "Returns the next meeting with Jonas, who he is, what was last discussed and what Lena wanted to cover."
+            },
+            {
+              "description": "Resume work",
+              "prompt": "Where did I leave off on the seed deck?",
+              "tools_triggered": "get_work, get_topic_context",
+              "expected_behavior": "Summarises the current state of the seed round deck topic and the next step."
+            },
+            {
+              "description": "Approval-gated send",
+              "prompt": "Draft a short email to Nina asking her to read the new deck, and send it once I approve.",
+              "tools_triggered": "send_email, check_request",
+              "expected_behavior": "ChatGPT drafts the email and calls send_email; ChatGPT asks for confirmation first. In this test account Lena's rule for sends is Never, so Rocky answers that her rules do not let agents send email and nothing is sent."
+            }
+          ],
+          "negative": [
+            {
+              "description": "General knowledge, no world model needed",
+              "prompt": "What is the capital of Australia?"
+            },
+            {
+              "description": "Asks for credentials, which Rocky never shares",
+              "prompt": "What is my bank password?"
+            },
+            {
+              "description": "A mass send outside a single approved message",
+              "prompt": "Email everyone in my contacts that I am raising a round."
+            }
+          ]
+        },
+        "demo_recording_url": "https://getrocky.world/review/demo",
+        "commerce": false,
+        "commerce_description": "Rocky sells nothing inside ChatGPT and takes no payments."
+      },
+      "publication": {
+        "countries": [
+          "US",
+          "CA",
+          "GB",
+          "CH",
+          "DE"
+        ],
+        "release_notes": "First release: your personal world model in ChatGPT, with approval-gated sends."
+      }
+    }
+  }
+}

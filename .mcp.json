@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "rocky": {
+      "type": "http",
+      "url": "https://mcp.getrocky.world/mcp"
+    }
+  }
+}
