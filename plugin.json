@@ -70,9 +70,9 @@
             },
             {
               "description": "Resume work",
-              "prompt": "Where did I leave off on the seed deck?",
-              "tools_triggered": "get_work, get_topic_context",
-              "expected_behavior": "Summarises the current state of the seed round deck topic and the next step."
+              "prompt": "Where am I with the seed deck and the round?",
+              "tools_triggered": "search_memory",
+              "expected_behavior": "Summarises the Lumen Labs seed round: seed deck v4 for the Seedfund partner review, the two angels, the open lead with Jonas Weber, and the next step of sending the deck."
             },
             {
               "description": "Approval-gated send",
