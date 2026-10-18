@@ -12,6 +12,9 @@
   "repository": "https://github.com/getrocky-world/rocky-plugin",
   "license": "MIT",
   "privacyPolicyUrl": "https://getrocky.world/privacy",
+  "termsOfServiceUrl": "https://getrocky.world/terms",
+  "supportUrl": "https://getrocky.world/agents",
+  "documentationUrl": "https://getrocky.world/agents",
   "keywords": [
     "world model",
     "memory",
