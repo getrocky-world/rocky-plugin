@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "rocky",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bring your personal world model to your agent: one living picture of your life and work, the people you know, what you work on, your commitments and preferences, built privately by Rocky. Rocky guards it and asks you before anything is shared or sent.",
   "author": {
     "name": "Doppelganger Technologies",

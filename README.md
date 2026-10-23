@@ -5,7 +5,8 @@ privately on your Mac from the sources you switch on: the people you know, what 
 preferences. Your agent works from it through Rocky, and Rocky asks you before anything is shared beyond your rules or sent.
 
 This plugin connects Claude, ChatGPT, Codex, Cursor and Grok Bot to Rocky's server at `https://mcp.getrocky.world/mcp` and adds the
-Rocky skill, which tells the agent what each Rocky tool returns.
+Rocky skill, which tells the agent what each Rocky tool returns and how asks work: Rocky asks you, and the agent waits and
+checks in again until you decide.
 
 ## Use it
 
@@ -13,7 +14,7 @@ Rocky skill, which tells the agent what each Rocky tool returns.
 2. Add this plugin, then connect Rocky and sign in with your Rocky account.
 3. Ask your agent things only you know: "Brief me for my next meeting", "What did I promise this week?", "Where did I leave off?"
 
-The first time an agent reads something, Rocky asks you on your Mac or iPhone: Deny, Allow for this task, or Always. Emails,
+The first time an agent reads something, Rocky asks you on your Mac or iPhone: Deny, Allow for 1 hour, or Always. Emails,
 WhatsApp messages and calendar invites leave only after you press Send in Rocky.
 
 ## Data

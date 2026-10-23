@@ -1,7 +1,7 @@
 {
   "name": "rocky",
   "displayName": "Rocky",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bring your personal world model into Claude: one living picture of your life and work, the people you know, what you work on, your commitments and preferences, built privately by Rocky from your own messages, mail, calendar and screen. Rocky guards it and asks you before anything is shared or sent.",
   "author": {
     "name": "Doppelganger Technologies",
